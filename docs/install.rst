@@ -5,11 +5,11 @@ Installation
 Installing django-bbrik
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Install latest stable version into your python path using pip::
+#. Install latest stable version into your python path using pip::
 
-    pip install git+ssh://git@github.com/bbrik/django-accounts.git
+    pip install git+ssh://git@github.com/bbrik/django-bbrik.git
 
-Add ``bbrik`` to your ``INSTALLED_APPS`` in settings.py::
+#. Add ``bbrik`` to your ``INSTALLED_APPS`` in settings.py::
 
     INSTALLED_APPS = (
         ...
