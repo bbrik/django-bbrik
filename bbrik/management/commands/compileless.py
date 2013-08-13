@@ -27,7 +27,7 @@ class Command(BaseCommand):
                 call(['lessc', LESS_INPUT_FILE, CSS_OUTPUT_FILE])
         except OSError as e:
             if e.errno == errno.ENOENT:
-                error_msg = "lessc not found. install node, npm and less"
-                raise ImproperlyConfigured(error_msg)
+                msg = "lessc not found. install node, npm and less"
+                raise ImproperlyConfigured(msg)
             else:
                 raise
