@@ -48,7 +48,7 @@ Used to style any html as active based on the current request's path.
 Add ``django.core.context_processors.request`` to ``TEMPLATE_CONTEXT_PROCESSORS`` in
 settings.py
 
-The syntax is the same as django's ``url`` tag.
+The syntax is the similar as django's ``url`` tag.
 
 For example, with an ``urls.py``::
 
@@ -83,3 +83,12 @@ In a template, on a list of lists to posts::
     </li>
 
 This will render the ``<li>`` active if the current path is the detail for the post.
+
+You can also provide hard coded urls::
+
+    <li class="{% active_start '/post/' %}">
+      <a href="{% url 'post_home %}">
+        Posts
+      </a>
+    </li>
+
