@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.template import Library
-from django.core.urlresolvers import reverse
+from django.shortcuts import resolve_url
 from django.core.exceptions import ImproperlyConfigured
 
 
@@ -26,7 +26,7 @@ def active(context, viewname, *args, **kwargs):
 
     """
     request = get_request(context)
-    url = reverse(viewname, args=args, kwargs=kwargs)
+    url = resolve_url(viewname, *args, **kwargs)
     return 'active' if request.path == url else ''
 
 
@@ -39,5 +39,5 @@ def active_start(context, viewname, *args, **kwargs):
 
     """
     request = get_request(context)
-    url = reverse(viewname, args=args, kwargs=kwargs)
+    url = resolve_url(viewname, *args, **kwargs)
     return 'active' if request.path.startswith(url) else ''
