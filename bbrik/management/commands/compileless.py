@@ -7,7 +7,7 @@ from optparse import make_option
 from django.core.management.base import BaseCommand, CommandError
 from django.core.exceptions import ImproperlyConfigured
 
-from .base import LESS_INPUT_FILE, CSS_OUTPUT_FILE
+from ..base import LESS_INPUT_FILE, CSS_OUTPUT_FILE
 
 
 class Command(BaseCommand):
