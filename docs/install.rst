@@ -22,14 +22,14 @@ Management commands
 compileless
 ***********
 
-Install node, npm and less
+Install ``node``, ``npm`` and ``less``
 
 Add ``LESS_INPUT_FILE`` to settings.py::
 
     LESS_INPUT_FILE = '/path/to/project.less'
 
-Output is automatically rendered with the same name with ``.css` extension in a
-css directory in the first entry in STATICFILES_DIRS. For example:
+Output is automatically rendered with the same name with ``.css`` extension in a
+``css`` directory in the first entry in ``STATICFILES_DIRS``. For example:
 ``/static/css/project.css``
 
 You can specify an output using ``CSS_OUTPUT_FILE`` in settings.py::
