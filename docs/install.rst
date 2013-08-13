@@ -45,10 +45,10 @@ active and active_start
 
 Used to style any html as active based on the current request's path.
 
-Add ``django.core.context_processors.request`` to TEMPLATE_CONTEXT_PROCESSORS in
+Add ``django.core.context_processors.request`` to ``TEMPLATE_CONTEXT_PROCESSORS`` in
 settings.py
 
-The syntas is the same as django's ``url`` tag.
+The syntax is the same as django's ``url`` tag.
 
 For example, with an ``urls.py``::
 
