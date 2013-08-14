@@ -40,7 +40,7 @@ def active_query(context, **kwargs):
 
     """
     request = get_request(context)
-    query_in_get = [request.GET.get(k) == v for k,v in kwargs.items()]
+    query_in_get = [request.GET.get(k) == unicode(v) for k,v in kwargs.items()]
     return 'active' if all(query_in_get) else ''
 
 
