@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 
+import logging
+
 from django.template import Library
 from django.shortcuts import resolve_url
 from django.core.exceptions import ImproperlyConfigured
 
+
+logger = logging.getLogger(__name__)
 
 register = Library()
 
@@ -40,7 +44,7 @@ def active_query(context, **kwargs):
 
     """
     request = get_request(context)
-    query_in_get = [request.GET.get(k) == unicode(v) for k,v in kwargs.items()]
+    query_in_get = [request.GET.get(k, u'') == unicode(v) for k,v in kwargs.items()]
     return 'active' if all(query_in_get) else ''
 
 
