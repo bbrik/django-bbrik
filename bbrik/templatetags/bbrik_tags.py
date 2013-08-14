@@ -28,7 +28,7 @@ def replace_in_query(context, **kwargs):
     request = get_request(context)
     query = request.GET.copy()
     for k,v in kwargs.items():
-        query[k] = v
+        query[k] = unicode(v)
     return query.urlencode()
 
 
