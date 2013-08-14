@@ -18,6 +18,18 @@ def get_request(context):
 
 
 @register.simple_tag(takes_context=True)
+def active_query(context, **kwargs):
+    """
+    Returns the string "active" if the specified kwargs are found in the
+    request's GET.
+
+    """
+    request = get_request(context)
+    query_in_get = [request.GET.get(k) == v for k,v in kwargs.items()]
+    return 'active' if all(query_in_get) else ''
+
+
+@register.simple_tag(takes_context=True)
 def active(context, viewname, *args, **kwargs):
     """
     Usage is similar to django's url tag, but it doesn't return a url,
