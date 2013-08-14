@@ -106,6 +106,11 @@ only specified arguments, keeping all other query parameters.
 
 Those are useful for links that filter a query::
 
+    <li class="{% active_query fruit='' %}">
+      <a href="?{% replace_in_query fruit='' %}">
+        All fruits
+      </a>
+    </li>
     <li class="{% active_query fruit='apple' %}">
       <a href="?{% replace_in_query fruit='apple' %}">
         Apple
@@ -119,6 +124,11 @@ Those are useful for links that filter a query::
 
 For example, the above code will render this html if the current url is ``/?fruit=apple&q=test``::
 
+    <li class="">
+      <a href="?fruit=&q=test">
+        All fruits
+      </a>
+    </li>
     <li class="active">
       <a href="?fruit=apple&q=test">
         Apple
