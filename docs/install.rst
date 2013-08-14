@@ -92,3 +92,43 @@ You can also provide hard coded urls::
       </a>
     </li>
 
+
+active_query and replace_in_query
+*********************************
+
+Add ``django.core.context_processors.request`` to ``TEMPLATE_CONTEXT_PROCESSORS`` in
+settings.py
+
+``active_query`` is used to style any html as active based on the request's GET.
+
+``replace_in_query`` gets the current request's GET as url encoded, replacing
+only specified arguments, keeping all other query parameters.
+
+Those are useful for links that filter a query::
+
+    <li class="{% active_query fruit='apple' %}">
+      <a href="?{% replace_in_query fruit='apple' %}">
+        Apple
+      </a>
+    </li>
+    <li class="{% active_query fruit='orange' %}">
+      <a href="?{% replace_in_query fruit='orange' %}">
+        Orange
+      </a>
+    </li>
+
+For example, the above code will render this html if the current url is ``/?fruit=apple&q=test``::
+
+    <li class="active">
+      <a href="?fruit=apple&q=test">
+        Apple
+      </a>
+    </li>
+    <li class="">
+      <a href="?fruit=orante&q=test">
+        Orange
+      </a>
+    </li>
+
+So, you get each link pointing to its query filter,
+both keeping the other parameter ``q`` intact.
