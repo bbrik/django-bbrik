@@ -10,6 +10,7 @@ setup(
     version=bbrik.__version__,
     author=u'Bernardo Brik',
     author_email='bernardobrik@gmail.com',
+    scripts=['bbrik/bin/compileless.sh'],
     url='http://bitbucket.org/bruno/django-geoportail',
     description='Basic library used in all projects',
     include_package_data=True,
