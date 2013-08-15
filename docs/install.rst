@@ -7,7 +7,7 @@ Installing django-bbrik
 
 #. Install using pip::
 
-    pip install git+ssh://git@github.com/bbrik/django-bbrik.git
+    pip install git+https://github.com/bbrik/django-bbrik.git 
 
 #. Add ``bbrik`` to your ``INSTALLED_APPS`` in settings.py::
 
