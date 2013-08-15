@@ -9,7 +9,9 @@ Installing django-bbrik
 
     pip install git+https://github.com/bbrik/django-bbrik.git 
 
-#. Add ``bbrik`` to your ``INSTALLED_APPS`` in settings.py::
+#. Add ``bbrik`` to your ``INSTALLED_APPS`` in settings.py
+
+.. code-block:: python
 
     INSTALLED_APPS = (
         ...
@@ -24,7 +26,9 @@ compileless
 
 Install ``node``, ``npm`` and ``less``
 
-Add ``LESS_INPUT_FILE`` to settings.py::
+Add ``LESS_INPUT_FILE`` to settings.py:
+
+.. code-block:: python
 
     LESS_INPUT_FILE = '/path/to/project.less'
 
@@ -32,7 +36,9 @@ Output is automatically rendered with the same name with ``.css`` extension in a
 ``css`` directory in the first entry in ``STATICFILES_DIRS``. For example:
 ``/static/css/project.css``
 
-You can specify an output using ``CSS_OUTPUT_FILE`` in settings.py::
+You can specify an output using ``CSS_OUTPUT_FILE`` in settings.py:
+
+.. code-block:: python
 
     CSS_OUTPUT_FILE = '/path/to/project.css'
 
@@ -50,7 +56,9 @@ settings.py
 
 The syntax is the similar as django's ``url`` tag.
 
-For example, with an ``urls.py``::
+For example, with an ``urls.py``:
+
+.. code-block:: python
 
     ...
     url(
@@ -64,7 +72,9 @@ For example, with an ``urls.py``::
        name='post_detail'
     ),
 
-In a template for a site header you could have::
+In a template for a site header you could have:
+
+.. code-block:: html
 
     <li class="{% active_start 'post_home' %}">
       <a href="{% url 'post_home %}">
@@ -74,7 +84,9 @@ In a template for a site header you could have::
 
 This will render the ``<li>`` active for any path that starts with ``/post/``.
 
-In a template, on a list of lists to posts::
+In a template, on a list of lists to posts:
+
+.. code-block:: html
 
     <li class="{% active 'post_detail' slug=post.slug %}">
       <a href="{% url 'post_detail' slug=post.slug %}">
@@ -84,7 +96,9 @@ In a template, on a list of lists to posts::
 
 This will render the ``<li>`` active if the current path is the detail for the post.
 
-You can also provide hard coded urls::
+You can also provide hard coded urls:
+
+.. code-block:: html
 
     <li class="{% active_start '/post/' %}">
       <a href="{% url 'post_home %}">
@@ -104,7 +118,9 @@ settings.py
 ``replace_in_query`` gets the current request's GET as url encoded, replacing
 only specified arguments, keeping all other query parameters.
 
-Those are useful for links that filter a query::
+Those are useful for links that filter a query:
+
+.. code-block:: html
 
     <li class="{% active_query fruit='' %}">
       <a href="?{% replace_in_query fruit='' %}">
@@ -122,7 +138,9 @@ Those are useful for links that filter a query::
       </a>
     </li>
 
-For example, the above code will render this html if the current url is ``/?fruit=apple&q=test``::
+For example, the above code will render this html if the current url is ``/?fruit=apple&q=test``:
+
+.. code-block:: html
 
     <li class="">
       <a href="?fruit=&q=test">
